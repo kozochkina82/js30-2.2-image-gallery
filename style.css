@@ -1,8 +1,83 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
 body{
     max-width: 1280px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 15px;
-    font-weight: 400px;
-    background-color: black;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: light;
+    background-color: rgb(50, 42, 42);
     color: azure;
+    margin: 0 auto;
 }
+a {
+text-decoration: none;
+color:rgb(178, 23, 23)
+}
+a:hover{
+    color: rgb(249, 23, 23);
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+}
+.header-title{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+h1 {
+    margin-left: 10px;
+   }
+   .searching-form{
+    margin-right: 20px;
+   }
+.container{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   margin: 0 auto;
+}
+.search-field{
+    position: relative;
+}
+.search-field>input {
+    padding-right: 2.5rem;
+    padding-left: 10px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+  }
+  .search-icon{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0.875rem;
+    width: 1rem;
+    cursor: pointer;
+    color: #bdbdbd;
+    transition: color 0.15s ease-in-out;
+  }
+  .search-icon:hover {
+    color: #212529;
+  }
+  .images-field{
+    width: 1280px;
+    height: 800px;
+    border-top: 5px solid rgb(167, 2, 2);
+  }
+  footer{
+    margin: 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
