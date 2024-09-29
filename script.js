@@ -1,19 +1,44 @@
-document.querySelector('.search-form').addEventListener('submit', function(event){
+document.querySelector('.search-form').addEventListener('submit', function(event) {
   event.preventDefault();
+
+  // Получаем ключевое слово из формы
   let query = document.querySelector('.search').value;
-})
-const url = `https://api.unsplash.com/search/photos?query=${EncodeURIComponent(query)}&per_page=30&orientation=landscape&client_id=9VldmherwXTroIkkSXkUQg4cm8VOtcSAnD3nrvQ1Ga8`;
 
+  // Формируем URL 
+  const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=30&orientation=landscape&client_id=9VldmherwXTroIkkSXkUQg4cm8VOtcSAnD3nrvQ1Ga8`;
 
-//fetch ('https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=92f3e02f63678acc8416d044e189f515')
-//.then( function(resp) {return resp.json()}) //convert data to json
-//.then( function(data) {
-    //console.log(data);
-    //document.querySelector('.city-name').textContent = data.name;
-    //document.querySelector('.temperature').textContent = Math.round(data.main.temp - 273) + '\u00B0C';
-    //document.querySelector('.disclaimer').textContent = data.weather[0]['description']; 
-    //document.querySelector('.feature li').innerHTML = '<img src="https://openweathermap.org/img/wn' + data.weather[0]['icon'] + '@2x.png">';
-//})
-//.catch(function() {
-    //catch any errors
-//})
+  // Вызываем функцию для получения данных
+  getData(url);
+});
+
+async function getData(url) {
+  try {
+    // Выполняем запрос к API Unsplash
+    const res = await fetch(url);
+    const data = await res.json();
+
+    // Очищаем предыдущие результаты
+    let output = document.getElementById('output');
+    output.innerHTML = '';
+
+    // Проверяем, есть ли результаты
+    if (data.results.length > 0) {
+      // Обрабатываем каждый результат
+      data.results.forEach(photo => {
+        const img = document.createElement("img");
+        img.classList.add("gallery-img");
+        img.src = photo.urls.regular; // URL изображения
+        img.alt = photo.alt_description || 'Изображение'; // Описание изображения
+        img.style.maxWidth = '200px'; // Пример стиля для отображения
+        img.style.margin = '10px';
+
+        // Добавляем изображение в блок
+        output.appendChild(img);
+      });
+    } else {
+      output.innerHTML = 'Ничего не найдено.';
+    }
+  } catch (error) {
+    console.error('Ошибка при запросе:', error);
+  }
+}
