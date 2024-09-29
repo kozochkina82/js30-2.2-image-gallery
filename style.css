@@ -13,8 +13,9 @@ body{
 main{
   margin: 0;
   padding-left: 5%;
-  border-bottom: 5px solid rgb(167, 2, 2);
+
 }
+
 a {
 text-decoration: none;
 color:rgb(178, 23, 23)
@@ -102,10 +103,11 @@ h1 {
 
   footer{
     margin: 0;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 20px 20px;
+    border-top: 5px solid rgb(167, 2, 2);
   }
   .gallery-img{
   }
