@@ -11,6 +11,7 @@ document.querySelector('.search-form').addEventListener('submit', function(event
   getData(url);
 });
 
+
 async function getData(url) {
   try {
     // Выполняем запрос к API Unsplash
@@ -42,3 +43,10 @@ async function getData(url) {
     console.error('Ошибка при запросе:', error);
   }
 }
+// Выполняем запрос на загрузку фотографий по умолчанию ("winter nature")
+window.addEventListener('load', function() {
+  const defaultQuery = 'winter nature';
+  const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(defaultQuery)}&per_page=30&orientation=landscape&client_id=9VldmherwXTroIkkSXkUQg4cm8VOtcSAnD3nrvQ1Ga8`;
+  getData(url);
+  document.querySelector('.search').focus();
+});
