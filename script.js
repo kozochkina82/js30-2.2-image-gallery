@@ -29,7 +29,7 @@ async function getData(url) {
         img.classList.add("gallery-img");
         img.src = photo.urls.regular; // URL изображения
         img.alt = photo.alt_description || 'Изображение'; // Описание изображения
-        img.style.maxWidth = '200px'; // Пример стиля для отображения
+        img.style.maxWidth = '30%'; // Пример стиля для отображения
         img.style.margin = '10px';
 
         // Добавляем изображение в блок
