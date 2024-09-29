@@ -126,9 +126,13 @@ h1 {
       margin-left: 10px;
      }
      .searching-form{
-       margin-right: 20px;
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-right: 20px;
      }
-     .serch-form{
+     .search-form{
       position: relative;
       width: 100%;
       margin: 0 auto;
