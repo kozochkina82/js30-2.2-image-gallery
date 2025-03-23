@@ -10,6 +10,12 @@ body{
     color: #F9F0DA;
     margin: 0 auto;
 }
+main{
+  margin: 0;
+  padding-left: 5%;
+
+}
+
 a {
 text-decoration: none;
 color:rgb(178, 23, 23)
@@ -18,7 +24,7 @@ a:hover{
     color: rgb(249, 23, 23);
 }
 header{
-    width: 100%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,10 +103,11 @@ h1 {
 
   footer{
     margin: 0;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 20px 20px;
+    border-top: 5px solid rgb(167, 2, 2);
   }
   .gallery-img{
   }
@@ -109,7 +116,10 @@ h1 {
     height: 100%;
     margin: 0 auto;
   }
-  @media(max-width: 600px){
+  @media(max-width: 630px){
+    img{
+      max-width: 100%;
+    }
     header{
       display: flex;
       flex-direction: column;
@@ -170,11 +180,29 @@ h1 {
       padding: 10px 20px;
     }
     .gallery-img{
-      width: 40%;
+      width: 50%;
     }
  
     #output{
-      width: 100%;
+      width: 130%;
       height: 100%;
       margin: 0 auto;
   }
+}
+@media(max-width: 480px){
+  #output{
+    width: 150%;
+    height: 100%;
+    margin: 0 auto;
+}
+.searching-form{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+ }
+ h1{
+  font-size: 1.5rem;
+ }
+}
